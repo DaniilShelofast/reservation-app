@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-default-user-and-roles-relation
+      author: user
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: telegram_id
+                  valueNumeric: 123456789
+              - column:
+                  name: first_name
+                  value: Admin
+              - column:
+                  name: last_name
+                  value: Default
+              - column:
+                  name: username
+                  value: admin_bot
+              - column:
+                  name: phone
+                  value: "+380000000000"
+
+        - insert:
+            tableName: users_roles
+            columns:
+              - column:
+                  name: user_id
+                  valueNumeric: 1
+              - column:
+                  name: role_id
+                  valueNumeric: 2
