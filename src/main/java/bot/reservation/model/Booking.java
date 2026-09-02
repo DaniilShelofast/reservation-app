@@ -20,8 +20,6 @@ import org.hibernate.annotations.SQLRestriction;
 @Getter
 @Setter
 @Table(name = "bookings")
-@SQLDelete(sql = "UPDATE bookings SET is_deleted = true WHERE id = ?")
-@SQLRestriction("is_deleted = false")
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +39,4 @@ public class Booking {
     private BookingStatus status = BookingStatus.PENDING;
     @Column(name = "created_at")
     private LocalDateTime createdAt = LocalDateTime.now();
-    @Column(nullable = false, columnDefinition = "TINYINT(1)")
-    private boolean isDeleted = false;
 }

@@ -29,4 +29,12 @@ public class Room {
     private boolean isActive = true;
     @Column(nullable = false, columnDefinition = "TINYINT(1)")
     private boolean isDeleted = false;
+
+    public int getWorkingHourStart() {
+        return 0;
+    }
+
+    public int getWorkingHourEnd() {
+        return 0;
+    }
 }
