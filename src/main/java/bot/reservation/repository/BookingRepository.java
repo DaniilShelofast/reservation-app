@@ -39,5 +39,5 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
             @Param("cancelled") BookingStatus cancelled
     );
 
-    Set<Integer> findByRoomIdAndDateRange(Long roomId, LocalDateTime startOfDay, LocalDateTime endOfDay);
+    Set<Integer> findByRoomIdAndStartTimeAndEndTime(Long roomId, LocalDateTime startTime, LocalDateTime endTime);
 }
